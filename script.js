@@ -27,9 +27,73 @@ btnTwo.addEventListener("click", (e) => {
 	addText("2");
 });
 
+btnThree.addEventListener("click", (e) => {
+	addText("3");
+});
+
+btnFour.addEventListener("click", (e) => {
+	addText("4");
+});
+
+btnFive.addEventListener("click", (e) => {
+	addText("5");
+});
+
+btnSix.addEventListener("click", (e) => {
+	addText("6");
+});
+
+btnSeven.addEventListener("click", (e) => {
+	addText("7");
+});
+
+btnEight.addEventListener("click", (e) => {
+	addText("8");
+});
+
+btnNine.addEventListener("click", (e) => {
+	addText("9");
+});
+
+btnZero.addEventListener("click", (e) => {
+	addText("0");
+});
+
+btnClear.addEventListener("click", (e) => {
+    clearText();
+});
+
+btnDecimal.addEventListener("click", (e) => {
+    addText(".");
+});
+
+btnAdd.addEventListener("click", (e) => {
+    addText("+");
+});
+
+btnSubtract.addEventListener("click", (e) => {
+    addText("-");
+});
+
+btnMultiply.addEventListener("click", (e) => {
+    addText("*");
+});
+
+btnDivide.addEventListener("click", (e) => {
+    addText("/");
+});
+
+btnEquals.addEventListener("click", (e) => {
+    operate();
+});
+
 function addText(newText) {
 	if (!text.textContent === "") {
 		text.textContent = "";
 	}
 	text.textContent += newText;
+}
+
+function clearText() {
+    text.textContent = "";
 }

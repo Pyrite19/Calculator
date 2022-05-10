@@ -11,6 +11,7 @@ body {
 .display {
     display: flex;
     justify-content: center;
+    min-height: 85px;
 }
 
 .keypad {
