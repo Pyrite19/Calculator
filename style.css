@@ -25,9 +25,19 @@ body {
 .sideBtns {
     display: flex;
     flex-direction: column;
+    gap: 50px;
 }
 
 button {
     height: 50px;
     width: 50px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottomRow {
+    margin-left: 50px;
 }
