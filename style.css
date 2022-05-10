@@ -3,9 +3,28 @@ body {
     justify-content: center;
 }
 
-.row {
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
     display: flex;
     justify-content: center;
+}
+
+.keypad {
+    display: flex;
+}
+
+.tallBtn {
+    height: 100px;
+    width: 50px;
+}
+
+.sideBtns {
+    display: flex;
+    flex-direction: column;
 }
 
 button {
