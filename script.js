@@ -1,13 +1,4 @@
-btnOne = document.querySelector(".one");
-btnTwo = document.querySelector(".two");
-btnThree = document.querySelector(".three");
-btnFour = document.querySelector(".four");
-btnFive = document.querySelector(".five");
-btnSix = document.querySelector(".six");
-btnSeven = document.querySelector(".seven");
-btnEight = document.querySelector(".eight");
-btnNine = document.querySelector(".nine");
-btnZero = document.querySelector(".zero");
+digits = document.querySelectorAll(".row button");
 btnClear = document.querySelector(".clear");
 btnBackspace = document.querySelector(".backspace");
 btnDecimal = document.querySelector(".decimal");
@@ -18,73 +9,43 @@ btnDivide = document.querySelector(".division");
 btnEquals = document.querySelector(".equals");
 text = document.querySelector(".text");
 display = document.querySelector(".display");
-
-btnOne.addEventListener("click", (e) => {
-	addText("1");
-});
-
-btnTwo.addEventListener("click", (e) => {
-	addText("2");
-});
-
-btnThree.addEventListener("click", (e) => {
-	addText("3");
-});
-
-btnFour.addEventListener("click", (e) => {
-	addText("4");
-});
-
-btnFive.addEventListener("click", (e) => {
-	addText("5");
-});
-
-btnSix.addEventListener("click", (e) => {
-	addText("6");
-});
-
-btnSeven.addEventListener("click", (e) => {
-	addText("7");
-});
-
-btnEight.addEventListener("click", (e) => {
-	addText("8");
-});
-
-btnNine.addEventListener("click", (e) => {
-	addText("9");
-});
-
-btnZero.addEventListener("click", (e) => {
-	addText("0");
+operator = "";
+digits.forEach((element) => {
+	element.addEventListener("click", (e) => {
+		addText(element.textContent);
+	});
 });
 
 btnClear.addEventListener("click", (e) => {
-    clearText();
+	clearText();
 });
 
 btnDecimal.addEventListener("click", (e) => {
-    addText(".");
+	addText(".");
 });
 
 btnAdd.addEventListener("click", (e) => {
-    addText("+");
+	addText("+");
 });
 
 btnSubtract.addEventListener("click", (e) => {
-    addText("-");
+	addText("-");
 });
 
 btnMultiply.addEventListener("click", (e) => {
-    addText("*");
+	addText("*");
 });
 
 btnDivide.addEventListener("click", (e) => {
-    addText("/");
+	addText("/");
 });
 
 btnEquals.addEventListener("click", (e) => {
-    operate();
+	operate();
+});
+
+btnBackspace.addEventListener("click", (e) => {
+	backspace();
 });
 
 function addText(newText) {
@@ -95,5 +56,11 @@ function addText(newText) {
 }
 
 function clearText() {
-    text.textContent = "";
+	text.textContent = "";
 }
+
+function backspace() {
+	text.textContent = text.textContent.slice(0, -1);
+}
+
+function operate() {}
