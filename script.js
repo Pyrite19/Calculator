@@ -48,7 +48,6 @@ btnDivide.addEventListener("click", (e) => {
 
 btnEquals.addEventListener("click", (e) => {
 	numLogic();
-	operate(operator);
 });
 
 btnBackspace.addEventListener("click", (e) => {
@@ -63,6 +62,8 @@ function numLogic() {
 			firstNum.length + 1,
 			text.textContent.length
 		);
+		operate(operator);
+		firstNum = text.textContent;
 	}
 }
 function addText(newText) {
