@@ -85,19 +85,19 @@ function backspace() {
 
 function operate(operator) {
 	if (operator === "+") {
-		text.textContent = Number(firstNum) + Number(secondNum);
+		text.textContent = Math.round(Number(firstNum) + Number(secondNum * 100) / 100);
 	}
 	if (operator === "-") {
-		text.textContent = Number(firstNum) - Number(secondNum);
+		text.textContent = Math.round(Number(firstNum) - Number(secondNum * 100) / 100);
 	}
 	if (operator === "*") {
-		text.textContent = Number(firstNum) * Number(secondNum);
+		text.textContent = Math.round(Number(firstNum) * Number(secondNum * 100) / 100);
 	}
 	if (operator === "/") {
 		if (secondNum === "0") {
 			text.textContent = "don't you dare";
 		} else {
-			text.textContent = Number(firstNum) / Number(secondNum);
+			text.textContent = Math.round(Number(firstNum) / Number(secondNum) * 100) / 100;
 		}
 	}
 	firstNum = "";
