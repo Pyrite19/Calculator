@@ -6,12 +6,17 @@ body {
 .container {
     display: flex;
     flex-direction: column;
+    background-color: rgb(50, 50, 50);
+    padding: 10px;
+    border-radius: 8px;
 }
 
 .display {
     display: flex;
     justify-content: center;
     min-height: 85px;
+    background-color: rgb(85, 85, 85);
+    margin: 10px;
 }
 
 .keypad {
@@ -19,7 +24,7 @@ body {
 }
 
 .tallBtn {
-    height: 100px;
+    height: 105px;
     width: 50px;
 }
 
@@ -28,9 +33,14 @@ body {
     flex-direction: column;
 }
 
+.text {
+    color: white;
+}
+
 button {
     height: 50px;
     width: 50px;
+    margin: 2.5px;
 }
 
 .column {
@@ -39,5 +49,5 @@ button {
 }
 
 .bottomRow {
-    margin-left: 50px;
+    margin-left: 55px;
 }

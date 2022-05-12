@@ -23,83 +23,48 @@ btnClear.addEventListener("click", (e) => {
 });
 
 btnAdd.addEventListener("click", (e) => {
-	if (firstNum === "") {
-		firstNum = text.textContent;
-	} else if (secondNum === "") {
-		secondNum = text.textContent.slice(
-			firstNum.length + 1,
-			text.textContent.length
-		);
-	}
-	if (!(operator === "")) {
-		operate(firstNum, secondNum, operator);
-	}
+	numLogic();
 	operator = "+";
 	addText("+");
 });
 
 btnSubtract.addEventListener("click", (e) => {
-	if (firstNum === "") {
-		firstNum = text.textContent;
-	} else if (secondNum === "") {
-		secondNum = text.textContent.slice(
-			firstNum.length + 1,
-			text.textContent.length
-		);
-	}
-	if (!(operator === "")) {
-		operate(firstNum, secondNum, operator);
-	}
+	numLogic();
 	operator = "-";
 	addText("-");
 });
 
 btnMultiply.addEventListener("click", (e) => {
-	if (firstNum === "") {
-		firstNum = text.textContent;
-	} else if (secondNum === "") {
-		secondNum = text.textContent.slice(
-			firstNum.length + 1,
-			text.textContent.length
-		);
-	}
-	if (!(operator === "")) {
-		operate(firstNum, secondNum, operator);
-	}
+	numLogic();
 	operator = "*";
 	addText("*");
 });
 
 btnDivide.addEventListener("click", (e) => {
-	if (firstNum === "") {
-		firstNum = text.textContent;
-	} else if (secondNum === "") {
-		secondNum = text.textContent.slice(
-			firstNum.length + 1,
-			text.textContent.length
-		);
-	}
-	if (!(operator === "")) {
-		operate(firstNum, secondNum, operator);
-	}
+	numLogic();
 	operator = "/";
 	addText("/");
 });
 
 btnEquals.addEventListener("click", (e) => {
-	if (secondNum === "") {
-		secondNum = text.textContent.slice(
-			firstNum.length + 1,
-			text.textContent.length
-		);
-	}
-	operate(firstNum, secondNum, operator);
+	numLogic();
+	operate(operator);
 });
 
 btnBackspace.addEventListener("click", (e) => {
 	backspace();
 });
 
+function numLogic() {
+	if (firstNum === "") {
+		firstNum = text.textContent;
+	} else if (secondNum === "") {
+		secondNum = text.textContent.slice(
+			firstNum.length + 1,
+			text.textContent.length
+		);
+	}
+}
 function addText(newText) {
 	if (!text.textContent === "") {
 		text.textContent = "";
@@ -118,21 +83,21 @@ function backspace() {
 	text.textContent = text.textContent.slice(0, -1);
 }
 
-function operate(a, b, operator) {
+function operate(operator) {
 	if (operator === "+") {
-		text.textContent = (Number(a) + Number(b));
+		text.textContent = Number(firstNum) + Number(secondNum);
 	}
 	if (operator === "-") {
-		text.textContent = (Number(a) - Number(b));
+		text.textContent = Number(firstNum) - Number(secondNum);
 	}
 	if (operator === "*") {
-		text.textContent = (Number(a) * Number(b));
+		text.textContent = Number(firstNum) * Number(secondNum);
 	}
 	if (operator === "/") {
-		if (secondNum == "0") {
+		if (secondNum === "0") {
 			text.textContent = "don't you dare";
 		} else {
-			text.textContent = (Number(a) / Number(b));
+			text.textContent = Number(firstNum) / Number(secondNum);
 		}
 	}
 	firstNum = "";
